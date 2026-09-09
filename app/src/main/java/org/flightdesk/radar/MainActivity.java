@@ -1469,9 +1469,17 @@ public class MainActivity extends Activity {
     }
   }
 
+  String appVersion() {
+    try {
+      return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+    } catch (Exception ignored) {
+      return "";
+    }
+  }
+
   void about() {
     new AlertDialog.Builder(this)
-        .setTitle("Flight Radar Android 0.4.1")
+        .setTitle("Flight Radar Android " + appVersion())
         .setMessage(
             "由 delphicchen/esp32_flight_radar 改编，Android 界面和系统集成已重写。\n\n"
                 + "CC BY-NC-SA 4.0：署名、非商业、相同方式共享。\n"

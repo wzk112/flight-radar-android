@@ -3,6 +3,7 @@
 local.properties
 *.jks
 *.keystore
+.signing/
 .DS_Store
 *.apk
 *.aab
