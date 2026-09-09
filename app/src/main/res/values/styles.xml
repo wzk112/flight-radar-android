@@ -1,0 +1,18 @@
+<resources>
+    <style name="AppTheme" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:colorAccent">#69E6BA</item>
+        <item name="android:alertDialogTheme">@style/RadarDialog</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">#040909</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+    <style name="RadarDialog" parent="android:style/Theme.Material.Dialog.Alert">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:colorAccent">#69E6BA</item>
+        <item name="android:windowBackground">#07110E</item>
+        <item name="android:textColorPrimary">#C7FFE8</item>
+        <item name="android:textColorSecondary">#8FB7A3</item>
+    </style>
+</resources>

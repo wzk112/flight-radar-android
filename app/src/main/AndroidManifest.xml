@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+ <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+ <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+ <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+ <application android:icon="@drawable/ic_radar" android:dataExtractionRules="@xml/data_extraction_rules" android:label="Flight Radar" android:theme="@style/AppTheme" android:allowBackup="false" android:supportsRtl="true" android:networkSecurityConfig="@xml/network_security_config">
+  <activity android:name=".MainActivity" android:exported="true" android:configChanges="orientation|screenSize|keyboardHidden">
+   <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+  </activity>
+  <receiver android:name=".AlarmReceiver" android:exported="false"><intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/><action android:name="android.intent.action.TIME_SET"/><action android:name="android.intent.action.TIMEZONE_CHANGED"/><action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED"/></intent-filter></receiver>
+  <service android:name=".AlarmService" android:exported="false" android:foregroundServiceType="mediaPlayback"/>
+  <provider android:name=".ShotProvider" android:authorities="org.flightdesk.radar.shots" android:exported="false" android:grantUriPermissions="true"/>
+ </application>
+</manifest>

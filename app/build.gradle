@@ -1,0 +1,7 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'org.flightdesk.radar'
+ compileSdk 35
+ defaultConfig { applicationId 'org.flightdesk.radar'; minSdk 30; targetSdk 35; versionCode 8; versionName '0.5.0'; testInstrumentationRunner (project.hasProperty('adaptiveChecks') ? 'org.flightdesk.radar.AdaptiveChecks' : project.hasProperty('featureChecks') ? 'org.flightdesk.radar.FeatureChecks' : 'org.flightdesk.radar.DeviceChecks') }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}

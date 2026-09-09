@@ -1,0 +1,8 @@
+Device: Xiaomi 17 Ultra (25128PNA1C), Android 16
+Result: live feature checks passed on 2026-09-09
+
+PASS live YMML METAR fetched on phone
+PASS selected airport report matches
+PASS compact point-matrix METAR content renders
+PASS live address lookup returns a coordinate
+PASS current location received without logging coordinates

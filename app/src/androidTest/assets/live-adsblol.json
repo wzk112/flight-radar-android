@@ -1,0 +1,14 @@
+{"ac":[
+{"hex":"7c7543","type":"adsb_icao","flight":"QFA7356 ","r":"VH-XF5","t":"A321","alt_baro":10825,"alt_geom":11025,"gs":350.6,"ias":278,"tas":324,"mach":0.508,"wd":269,"ws":49,"oat":-5,"tat":9,"track":148.53,"track_rate":0.06,"roll":0.53,"mag_heading":143.79,"true_heading":155.60,"baro_rate":1152,"geom_rate":1216,"squawk":"4032","emergency":"none","category":"A3","nav_qnh":1012.8,"nav_altitude_mcp":31008,"lat":-37.813248,"lon":144.684507,"nic":8,"rc":186,"seen_pos":0.259,"version":2,"nic_baro":1,"nac_p":9,"nac_v":1,"sil":3,"sil_type":"perhour","gva":2,"sda":3,"alert":0,"spi":0,"mlat":[],"tisb":[],"messages":5844,"seen":0.0,"rssi":-4.4,"dst":10.231,"dir":265.5},
+{"hex":"7cf364","type":"adsb_icao_nt","flight":"CAR21   ","alt_baro":"ground","gs":0.0,"category":"C2","lat":-37.660984,"lon":144.822654,"nic":8,"rc":186,"seen_pos":7.541,"nac_p":11,"sil":2,"sil_type":"unknown","mlat":[],"tisb":[],"messages":476,"seen":0.7,"rssi":-21.0,"dst":9.124,"dir":336.2},
+{"hex":"c82ae4","type":"adsb_icao","flight":"TFX42   ","r":"ZK-TXC","t":"B738","alt_baro":1100,"alt_geom":1425,"gs":129.1,"ias":141,"tas":142,"mach":0.220,"wd":232,"ws":22,"track":172.43,"track_rate":-0.03,"roll":-0.35,"mag_heading":168.40,"true_heading":180.20,"baro_rate":-768,"geom_rate":-928,"squawk":"1176","emergency":"none","category":"A3","nav_qnh":1024.0,"nav_altitude_mcp":4000,"nav_heading":160.31,"lat":-37.605829,"lon":144.826255,"nic":8,"rc":186,"seen_pos":0.250,"version":2,"nic_baro":1,"nac_p":9,"nac_v":1,"sil":3,"sil_type":"perhour","gva":2,"sda":2,"alert":0,"spi":0,"mlat":[],"tisb":[],"messages":128119,"seen":0.0,"rssi":-15.3,"dst":12.183,"dir":343.3},
+{"hex":"7cf6d9","type":"adsb_icao_nt","flight":"        ","alt_baro":"ground","gs":0.2,"category":"C2","lat":-37.665836,"lon":144.848849,"nic":8,"rc":186,"seen_pos":7.199,"nac_p":11,"sil":2,"sil_type":"unknown","mlat":[],"tisb":[],"messages":4258,"seen":2.3,"rssi":-23.7,"dst":8.421,"dir":343.2},
+{"hex":"7cf0be","type":"adsb_icao_nt","flight":"WORKS89 ","alt_baro":"ground","gs":0.2,"category":"C2","lat":-37.665369,"lon":144.849467,"nic":11,"rc":8,"seen_pos":3.587,"nac_p":11,"nac_v":0,"sil":2,"sil_type":"perhour","sda":0,"mlat":[],"tisb":[],"messages":4000,"seen":0.6,"rssi":-23.7,"dst":8.439,"dir":343.5},
+{"hex":"7c4ef5","type":"mlat","flight":"POL32   ","r":"VH-PVR","t":"A139","alt_baro":2175,"alt_geom":2450,"gs":130.0,"ias":132,"tas":136,"mach":0.208,"wd":209,"ws":18,"track":134.65,"track_rate":-0.09,"roll":-0.35,"mag_heading":129.90,"true_heading":141.99,"baro_rate":0,"geom_rate":32,"squawk":"0032","category":"A7","nav_qnh":1025.2,"nav_altitude_mcp":2496,"nav_modes":[],"lat":-37.944954,"lon":145.155906,"nic":0,"rc":0,"seen_pos":2.271,"version":2,"alert":0,"spi":0,"mlat":["callsign","lat","lon","nic","rc"],"tisb":[],"messages":10847,"seen":0.0,"rssi":-6.7,"dst":14.912,"dir":125.7}
+]
+,"msg": "No error"
+,"now": 1788885987500
+,"total": 6
+,"ctime": 1788885987500
+,"ptime": 0
+}

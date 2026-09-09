@@ -1,0 +1,7 @@
+Artwork sources, retrieved 2026-09-09:
+O3.png: https://www.sf-airlines.com/sf/template/upimg/logo.svg (official white variant, rasterized).
+Other PNGs: https://www.gstatic.com/flights/airline_logos/70px/{IATA}.png
+Fallback PNGs AQ CK CV DZ EU FU FX G5 GJ GX KY KZ NS OQ PN PO RY TV UQ W8 Y8 7L:
+https://pics.avs.io/200/200/{IATA}.png
+Artwork remains the property of the respective airline/trademark owner, used for identification.
+Generic tail artwork is excluded. GI/I9/AZ artwork is blocked because the providers return previous operators' branding.

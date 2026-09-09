@@ -1,0 +1,20 @@
+Device: Xiaomi 17 Ultra (25128PNA1C), Android 16, 1200 x 2608
+Build: Flight Radar Android 0.4.1 (versionCode 7)
+Result: All 51 device checks passed
+
+Covered areas:
+- compact METAR Chinese translation and unit conversion
+- real adsb.lol fixture parsing and OpenSky conversion
+- stale traffic exclusion from conflict detection
+- map CRC validation
+- keep-awake and burn-in protection behavior
+- ICAO, IATA and nearest-airport lookup
+- settings, weather, alarm, portrait and landscape rendering
+- four-flight and focused single-flight boards
+- local airline identities and IATA flight-number fallback
+- ten complete two-finger zoom gestures without replacing or crashing the radar view
+- full flight-label tapping and blank-area highlight clearing
+- background refresh pause and keep-awake clearing
+- exact alarm scheduling, playback and stop behavior
+
+The final run completed on 2026-09-09 with: All 51 checks passed.
