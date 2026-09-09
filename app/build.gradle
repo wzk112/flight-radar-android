@@ -2,7 +2,14 @@ plugins { id 'com.android.application' }
 android {
  namespace 'org.flightdesk.radar'
  compileSdk 35
- defaultConfig { applicationId 'org.flightdesk.radar'; minSdk 30; targetSdk 35; versionCode 9; versionName '1.0.0-beta.1'; testInstrumentationRunner (project.hasProperty('adaptiveChecks') ? 'org.flightdesk.radar.AdaptiveChecks' : project.hasProperty('featureChecks') ? 'org.flightdesk.radar.FeatureChecks' : 'org.flightdesk.radar.DeviceChecks') }
+ defaultConfig {
+  applicationId 'org.flightdesk.radar'
+  minSdk 29
+  targetSdk 35
+  versionCode 10
+  versionName '1.0.0-beta.2'
+  testInstrumentationRunner (project.hasProperty('adaptiveChecks') ? 'org.flightdesk.radar.AdaptiveChecks' : project.hasProperty('featureChecks') ? 'org.flightdesk.radar.FeatureChecks' : 'org.flightdesk.radar.DeviceChecks')
+}
  def releaseStore = System.getenv('FLIGHTRADAR_KEYSTORE')
  def releaseStorePassword = System.getenv('FLIGHTRADAR_STORE_PASSWORD')
  def releaseKeyPassword = System.getenv('FLIGHTRADAR_KEY_PASSWORD')

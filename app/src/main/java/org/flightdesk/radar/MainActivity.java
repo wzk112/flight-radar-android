@@ -15,6 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
+import android.text.TextUtils;
 import org.json.*;
 
 public class MainActivity extends Activity {
@@ -70,11 +71,15 @@ public class MainActivity extends Activity {
       prefs.put("nearestCount", 1);
       prefs.put("nearestSingleV7", true);
     }
-    routes = new Routes(this);
     if (!prefs.b("stableRefresh30", false)) {
       if (prefs.i("poll", 15) < 30) prefs.put("poll", 30);
       prefs.put("stableRefresh30", true);
     }
+    if (!prefs.b("streetsDefaultOffBeta2", false)) {
+      prefs.put("streets", false);
+      prefs.put("streetsDefaultOffBeta2", true);
+    }
+    routes = new Routes(this);
     streets = new StreetMap(this);
     metar = new Metar(this);
     positions = new PositionPicker(this);
@@ -168,8 +173,17 @@ public class MainActivity extends Activity {
     setContentView(frame);
     frame.setOnApplyWindowInsetsListener(
         (v, insets) -> {
-          android.graphics.Insets safe = insets.getInsets(WindowInsets.Type.displayCutout() | WindowInsets.Type.systemBars());
-          frame.setPadding(safe.left, safe.top, safe.right, safe.bottom);
+          if (Build.VERSION.SDK_INT >= 30) {
+            android.graphics.Insets safe =
+                insets.getInsets(WindowInsets.Type.displayCutout() | WindowInsets.Type.systemBars());
+            frame.setPadding(safe.left, safe.top, safe.right, safe.bottom);
+            return insets;
+          }
+          frame.setPadding(
+              insets.getSystemWindowInsetLeft(),
+              insets.getSystemWindowInsetTop(),
+              insets.getSystemWindowInsetRight(),
+              insets.getSystemWindowInsetBottom());
           return insets;
         });
     root.setBackgroundColor(0xff040a09);
@@ -1260,7 +1274,7 @@ public class MainActivity extends Activity {
               if (settingsDialog != null) settingsDialog.dismiss();
               positions.show();
             }));
-    toggle(col, "街道底图（OpenStreetMap）", "streets", true);
+    toggle(col, "街道底图（OpenStreetMap）", "streets", false);
     toggle(col, "跑道延长线", "extensions", false);
     toggle(col, "显示机场", "airports", true);
     toggle(col, "显示跑道及延长线", "runways", true);
@@ -1348,9 +1362,16 @@ public class MainActivity extends Activity {
                     }));
     settingsDialog = d;
     d.show();
-    Rect bounds = getWindowManager().getCurrentWindowMetrics().getBounds();
-    d.getWindow().setLayout(Math.min(dp(720), (int) (bounds.width() * .9f)), (int) (bounds.height() * .9f));
+    Rect bounds = boundsLegacy();
+    d.getWindow()
+        .setLayout(Math.min(dp(720), (int) (bounds.width() * .9f)), (int) (bounds.height() * .9f));
     d.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+  }
+
+  Rect boundsLegacy() {
+    android.util.DisplayMetrics metrics = new android.util.DisplayMetrics();
+    getWindowManager().getDefaultDisplay().getMetrics(metrics);
+    return new Rect(0, 0, metrics.widthPixels, metrics.heightPixels);
   }
 
   void alarmPage() {
