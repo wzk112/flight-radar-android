@@ -6,8 +6,8 @@ android {
   applicationId 'org.flightdesk.radar'
   minSdk 29
   targetSdk 35
-  versionCode 10
-  versionName '1.0.0-beta.2'
+  versionCode 11
+  versionName '1.0.0-beta.3'
   testInstrumentationRunner (project.hasProperty('adaptiveChecks') ? 'org.flightdesk.radar.AdaptiveChecks' : project.hasProperty('featureChecks') ? 'org.flightdesk.radar.FeatureChecks' : 'org.flightdesk.radar.DeviceChecks')
 }
  def releaseStore = System.getenv('FLIGHTRADAR_KEYSTORE')

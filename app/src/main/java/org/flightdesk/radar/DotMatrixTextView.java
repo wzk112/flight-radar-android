@@ -10,6 +10,7 @@ import android.widget.TextView;
 /** Renders Android's full Unicode text coverage through a cached LED-style dot mask. */
 final class DotMatrixTextView extends TextView {
   Bitmap dots;
+  final Paint tint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
   boolean dirty = true;
 
   DotMatrixTextView(Context c) {
@@ -47,7 +48,13 @@ final class DotMatrixTextView extends TextView {
     if (getWidth() <= 0 || getHeight() <= 0) return;
     if (dirty || dots == null || dots.getWidth() != getWidth() || dots.getHeight() != getHeight())
       rebuild();
-    if (dots != null) canvas.drawBitmap(dots, 0, 0, null);
+    if (dots != null) {
+      // ALPHA_8 stores only the dot mask. Supply the current text colour when compositing it;
+      // drawing an alpha-only bitmap with a null paint renders black on some Android versions.
+      tint.setColor(getCurrentTextColor());
+      tint.setAlpha(Color.alpha(getCurrentTextColor()));
+      canvas.drawBitmap(dots, 0, 0, tint);
+    }
   }
 
   protected void onDetachedFromWindow() {

@@ -9,6 +9,7 @@ import android.widget.Button;
 /** Keeps the native button hit target/ripple while drawing its label as LED dots. */
 final class DotMatrixButton extends Button {
   Bitmap dots;
+  final Paint tint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
   boolean dirty = true;
 
   DotMatrixButton(Context context) {
@@ -37,7 +38,12 @@ final class DotMatrixButton extends Button {
     if (getWidth() <= 0 || getHeight() <= 0) return;
     if (dirty || dots == null || dots.getWidth() != getWidth() || dots.getHeight() != getHeight())
       rebuild();
-    if (dots != null) canvas.drawBitmap(dots, 0, 0, null);
+    if (dots != null) {
+      // ALPHA_8 is a compact mask and needs an explicit colour at draw time.
+      tint.setColor(getCurrentTextColor());
+      tint.setAlpha(Color.alpha(getCurrentTextColor()));
+      canvas.drawBitmap(dots, 0, 0, tint);
+    }
   }
 
   protected void onDetachedFromWindow() {
